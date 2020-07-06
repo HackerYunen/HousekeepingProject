@@ -11,7 +11,7 @@
  Target Server Version : 80015
  File Encoding         : 65001
 
- Date: 04/07/2020 22:44:29
+ Date: 06/07/2020 20:10:36
 */
 
 SET NAMES utf8mb4;
@@ -55,7 +55,7 @@ CREATE TABLE `auth_permission`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `auth_permission_content_type_id_codename_01ab375a_uniq`(`content_type_id`, `codename`) USING BTREE,
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 45 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 61 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of auth_permission
@@ -84,26 +84,42 @@ INSERT INTO `auth_permission` VALUES (21, 'Can add session', 6, 'add_session');
 INSERT INTO `auth_permission` VALUES (22, 'Can change session', 6, 'change_session');
 INSERT INTO `auth_permission` VALUES (23, 'Can delete session', 6, 'delete_session');
 INSERT INTO `auth_permission` VALUES (24, 'Can view session', 6, 'view_session');
-INSERT INTO `auth_permission` VALUES (25, 'Can add order', 7, 'add_order');
-INSERT INTO `auth_permission` VALUES (26, 'Can change order', 7, 'change_order');
-INSERT INTO `auth_permission` VALUES (27, 'Can delete order', 7, 'delete_order');
-INSERT INTO `auth_permission` VALUES (28, 'Can view order', 7, 'view_order');
-INSERT INTO `auth_permission` VALUES (29, 'Can add hk man', 8, 'add_hkman');
-INSERT INTO `auth_permission` VALUES (30, 'Can change hk man', 8, 'change_hkman');
-INSERT INTO `auth_permission` VALUES (31, 'Can delete hk man', 8, 'delete_hkman');
-INSERT INTO `auth_permission` VALUES (32, 'Can view hk man', 8, 'view_hkman');
-INSERT INTO `auth_permission` VALUES (33, 'Can add user', 9, 'add_user');
-INSERT INTO `auth_permission` VALUES (34, 'Can change user', 9, 'change_user');
-INSERT INTO `auth_permission` VALUES (35, 'Can delete user', 9, 'delete_user');
-INSERT INTO `auth_permission` VALUES (36, 'Can view user', 9, 'view_user');
-INSERT INTO `auth_permission` VALUES (37, 'Can add with draw', 10, 'add_withdraw');
-INSERT INTO `auth_permission` VALUES (38, 'Can change with draw', 10, 'change_withdraw');
-INSERT INTO `auth_permission` VALUES (39, 'Can delete with draw', 10, 'delete_withdraw');
-INSERT INTO `auth_permission` VALUES (40, 'Can view with draw', 10, 'view_withdraw');
-INSERT INTO `auth_permission` VALUES (41, 'Can add wage', 11, 'add_wage');
-INSERT INTO `auth_permission` VALUES (42, 'Can change wage', 11, 'change_wage');
-INSERT INTO `auth_permission` VALUES (43, 'Can delete wage', 11, 'delete_wage');
-INSERT INTO `auth_permission` VALUES (44, 'Can view wage', 11, 'view_wage');
+INSERT INTO `auth_permission` VALUES (25, 'Can add company', 7, 'add_company');
+INSERT INTO `auth_permission` VALUES (26, 'Can change company', 7, 'change_company');
+INSERT INTO `auth_permission` VALUES (27, 'Can delete company', 7, 'delete_company');
+INSERT INTO `auth_permission` VALUES (28, 'Can view company', 7, 'view_company');
+INSERT INTO `auth_permission` VALUES (29, 'Can add order', 8, 'add_order');
+INSERT INTO `auth_permission` VALUES (30, 'Can change order', 8, 'change_order');
+INSERT INTO `auth_permission` VALUES (31, 'Can delete order', 8, 'delete_order');
+INSERT INTO `auth_permission` VALUES (32, 'Can view order', 8, 'view_order');
+INSERT INTO `auth_permission` VALUES (33, 'Can add score', 9, 'add_score');
+INSERT INTO `auth_permission` VALUES (34, 'Can change score', 9, 'change_score');
+INSERT INTO `auth_permission` VALUES (35, 'Can delete score', 9, 'delete_score');
+INSERT INTO `auth_permission` VALUES (36, 'Can view score', 9, 'view_score');
+INSERT INTO `auth_permission` VALUES (37, 'Can add category', 10, 'add_category');
+INSERT INTO `auth_permission` VALUES (38, 'Can change category', 10, 'change_category');
+INSERT INTO `auth_permission` VALUES (39, 'Can delete category', 10, 'delete_category');
+INSERT INTO `auth_permission` VALUES (40, 'Can view category', 10, 'view_category');
+INSERT INTO `auth_permission` VALUES (41, 'Can add sub category', 11, 'add_subcategory');
+INSERT INTO `auth_permission` VALUES (42, 'Can change sub category', 11, 'change_subcategory');
+INSERT INTO `auth_permission` VALUES (43, 'Can delete sub category', 11, 'delete_subcategory');
+INSERT INTO `auth_permission` VALUES (44, 'Can view sub category', 11, 'view_subcategory');
+INSERT INTO `auth_permission` VALUES (45, 'Can add service', 12, 'add_service');
+INSERT INTO `auth_permission` VALUES (46, 'Can change service', 12, 'change_service');
+INSERT INTO `auth_permission` VALUES (47, 'Can delete service', 12, 'delete_service');
+INSERT INTO `auth_permission` VALUES (48, 'Can view service', 12, 'view_service');
+INSERT INTO `auth_permission` VALUES (49, 'Can add collections', 13, 'add_collections');
+INSERT INTO `auth_permission` VALUES (50, 'Can change collections', 13, 'change_collections');
+INSERT INTO `auth_permission` VALUES (51, 'Can delete collections', 13, 'delete_collections');
+INSERT INTO `auth_permission` VALUES (52, 'Can view collections', 13, 'view_collections');
+INSERT INTO `auth_permission` VALUES (53, 'Can add user', 14, 'add_user');
+INSERT INTO `auth_permission` VALUES (54, 'Can change user', 14, 'change_user');
+INSERT INTO `auth_permission` VALUES (55, 'Can delete user', 14, 'delete_user');
+INSERT INTO `auth_permission` VALUES (56, 'Can view user', 14, 'view_user');
+INSERT INTO `auth_permission` VALUES (57, 'Can add with draw', 15, 'add_withdraw');
+INSERT INTO `auth_permission` VALUES (58, 'Can change with draw', 15, 'change_withdraw');
+INSERT INTO `auth_permission` VALUES (59, 'Can delete with draw', 15, 'delete_withdraw');
+INSERT INTO `auth_permission` VALUES (60, 'Can view with draw', 15, 'view_withdraw');
 
 -- ----------------------------
 -- Table structure for auth_user
@@ -124,11 +140,6 @@ CREATE TABLE `auth_user`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `username`(`username`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of auth_user
--- ----------------------------
-INSERT INTO `auth_user` VALUES (1, 'pbkdf2_sha256$180000$T7tf817jkYdj$DpXWDjVvK6P+TSxv0B4RxXTBTEwsL0DsFHMFQV1Pb8A=', NULL, 1, 'admin', '', '', 'admin@admin.com', 1, 1, '2020-07-04 14:44:04.765467');
 
 -- ----------------------------
 -- Table structure for auth_user_groups
@@ -161,6 +172,20 @@ CREATE TABLE `auth_user_user_permissions`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Table structure for company_company
+-- ----------------------------
+DROP TABLE IF EXISTS `company_company`;
+CREATE TABLE `company_company`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `qualification` int(11) NOT NULL,
+  `money` double NOT NULL,
+  `createAt` datetime(6) NULL,
+  `modifiedAt` datetime(6) NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
 -- Table structure for django_admin_log
 -- ----------------------------
 DROP TABLE IF EXISTS `django_admin_log`;
@@ -190,7 +215,7 @@ CREATE TABLE `django_content_type`  (
   `model` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `django_content_type_app_label_model_76bd3d3b_uniq`(`app_label`, `model`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of django_content_type
@@ -199,13 +224,17 @@ INSERT INTO `django_content_type` VALUES (1, 'admin', 'logentry');
 INSERT INTO `django_content_type` VALUES (3, 'auth', 'group');
 INSERT INTO `django_content_type` VALUES (2, 'auth', 'permission');
 INSERT INTO `django_content_type` VALUES (4, 'auth', 'user');
+INSERT INTO `django_content_type` VALUES (7, 'company', 'company');
 INSERT INTO `django_content_type` VALUES (5, 'contenttypes', 'contenttype');
-INSERT INTO `django_content_type` VALUES (8, 'hkman', 'hkman');
-INSERT INTO `django_content_type` VALUES (7, 'order', 'order');
+INSERT INTO `django_content_type` VALUES (8, 'order', 'order');
+INSERT INTO `django_content_type` VALUES (9, 'score', 'score');
+INSERT INTO `django_content_type` VALUES (10, 'service', 'category');
+INSERT INTO `django_content_type` VALUES (13, 'service', 'collections');
+INSERT INTO `django_content_type` VALUES (12, 'service', 'service');
+INSERT INTO `django_content_type` VALUES (11, 'service', 'subcategory');
 INSERT INTO `django_content_type` VALUES (6, 'sessions', 'session');
-INSERT INTO `django_content_type` VALUES (9, 'user', 'user');
-INSERT INTO `django_content_type` VALUES (11, 'wage', 'wage');
-INSERT INTO `django_content_type` VALUES (10, 'wage', 'withdraw');
+INSERT INTO `django_content_type` VALUES (14, 'user', 'user');
+INSERT INTO `django_content_type` VALUES (15, 'withdraw', 'withdraw');
 
 -- ----------------------------
 -- Table structure for django_migrations
@@ -217,32 +246,34 @@ CREATE TABLE `django_migrations`  (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `applied` datetime(6) NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of django_migrations
 -- ----------------------------
-INSERT INTO `django_migrations` VALUES (1, 'contenttypes', '0001_initial', '2020-07-04 14:25:36.810625');
-INSERT INTO `django_migrations` VALUES (2, 'auth', '0001_initial', '2020-07-04 14:25:37.826627');
-INSERT INTO `django_migrations` VALUES (3, 'admin', '0001_initial', '2020-07-04 14:25:41.194625');
-INSERT INTO `django_migrations` VALUES (4, 'admin', '0002_logentry_remove_auto_add', '2020-07-04 14:25:41.806627');
-INSERT INTO `django_migrations` VALUES (5, 'admin', '0003_logentry_add_action_flag_choices', '2020-07-04 14:25:41.847657');
-INSERT INTO `django_migrations` VALUES (6, 'contenttypes', '0002_remove_content_type_name', '2020-07-04 14:25:42.544628');
-INSERT INTO `django_migrations` VALUES (7, 'auth', '0002_alter_permission_name_max_length', '2020-07-04 14:25:43.129627');
-INSERT INTO `django_migrations` VALUES (8, 'auth', '0003_alter_user_email_max_length', '2020-07-04 14:25:43.514628');
-INSERT INTO `django_migrations` VALUES (9, 'auth', '0004_alter_user_username_opts', '2020-07-04 14:25:43.549630');
-INSERT INTO `django_migrations` VALUES (10, 'auth', '0005_alter_user_last_login_null', '2020-07-04 14:25:43.923401');
-INSERT INTO `django_migrations` VALUES (11, 'auth', '0006_require_contenttypes_0002', '2020-07-04 14:25:43.938369');
-INSERT INTO `django_migrations` VALUES (12, 'auth', '0007_alter_validators_add_error_messages', '2020-07-04 14:25:43.959372');
-INSERT INTO `django_migrations` VALUES (13, 'auth', '0008_alter_user_username_max_length', '2020-07-04 14:25:44.325405');
-INSERT INTO `django_migrations` VALUES (14, 'auth', '0009_alter_user_last_name_max_length', '2020-07-04 14:25:44.839368');
-INSERT INTO `django_migrations` VALUES (15, 'auth', '0010_alter_group_name_max_length', '2020-07-04 14:25:45.079371');
-INSERT INTO `django_migrations` VALUES (16, 'auth', '0011_update_proxy_permissions', '2020-07-04 14:25:45.121371');
-INSERT INTO `django_migrations` VALUES (17, 'user', '0001_initial', '2020-07-04 14:25:45.320367');
-INSERT INTO `django_migrations` VALUES (18, 'hkman', '0001_initial', '2020-07-04 14:25:45.630369');
-INSERT INTO `django_migrations` VALUES (19, 'order', '0001_initial', '2020-07-04 14:25:46.029365');
-INSERT INTO `django_migrations` VALUES (20, 'sessions', '0001_initial', '2020-07-04 14:25:47.304366');
-INSERT INTO `django_migrations` VALUES (21, 'wage', '0001_initial', '2020-07-04 14:25:47.572367');
+INSERT INTO `django_migrations` VALUES (1, 'contenttypes', '0001_initial', '2020-07-06 10:20:59.523771');
+INSERT INTO `django_migrations` VALUES (2, 'auth', '0001_initial', '2020-07-06 10:21:00.609802');
+INSERT INTO `django_migrations` VALUES (3, 'admin', '0001_initial', '2020-07-06 10:21:03.972933');
+INSERT INTO `django_migrations` VALUES (4, 'admin', '0002_logentry_remove_auto_add', '2020-07-06 10:21:04.630902');
+INSERT INTO `django_migrations` VALUES (5, 'admin', '0003_logentry_add_action_flag_choices', '2020-07-06 10:21:04.706905');
+INSERT INTO `django_migrations` VALUES (6, 'contenttypes', '0002_remove_content_type_name', '2020-07-06 10:21:05.304903');
+INSERT INTO `django_migrations` VALUES (7, 'auth', '0002_alter_permission_name_max_length', '2020-07-06 10:21:05.724934');
+INSERT INTO `django_migrations` VALUES (8, 'auth', '0003_alter_user_email_max_length', '2020-07-06 10:21:06.301026');
+INSERT INTO `django_migrations` VALUES (9, 'auth', '0004_alter_user_username_opts', '2020-07-06 10:21:06.316059');
+INSERT INTO `django_migrations` VALUES (10, 'auth', '0005_alter_user_last_login_null', '2020-07-06 10:21:06.503028');
+INSERT INTO `django_migrations` VALUES (11, 'auth', '0006_require_contenttypes_0002', '2020-07-06 10:21:06.523026');
+INSERT INTO `django_migrations` VALUES (12, 'auth', '0007_alter_validators_add_error_messages', '2020-07-06 10:21:06.556059');
+INSERT INTO `django_migrations` VALUES (13, 'auth', '0008_alter_user_username_max_length', '2020-07-06 10:21:07.073226');
+INSERT INTO `django_migrations` VALUES (14, 'auth', '0009_alter_user_last_name_max_length', '2020-07-06 10:21:07.325156');
+INSERT INTO `django_migrations` VALUES (15, 'auth', '0010_alter_group_name_max_length', '2020-07-06 10:21:07.795156');
+INSERT INTO `django_migrations` VALUES (16, 'auth', '0011_update_proxy_permissions', '2020-07-06 10:21:07.811160');
+INSERT INTO `django_migrations` VALUES (17, 'company', '0001_initial', '2020-07-06 10:21:07.899154');
+INSERT INTO `django_migrations` VALUES (18, 'user', '0001_initial', '2020-07-06 10:21:08.021156');
+INSERT INTO `django_migrations` VALUES (19, 'service', '0001_initial', '2020-07-06 10:21:09.269155');
+INSERT INTO `django_migrations` VALUES (20, 'order', '0001_initial', '2020-07-06 10:21:12.276455');
+INSERT INTO `django_migrations` VALUES (21, 'score', '0001_initial', '2020-07-06 10:21:13.530560');
+INSERT INTO `django_migrations` VALUES (22, 'sessions', '0001_initial', '2020-07-06 10:21:14.594678');
+INSERT INTO `django_migrations` VALUES (23, 'withdraw', '0001_initial', '2020-07-06 10:21:14.951680');
 
 -- ----------------------------
 -- Table structure for django_session
@@ -257,42 +288,135 @@ CREATE TABLE `django_session`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for hkman_hkman
--- ----------------------------
-DROP TABLE IF EXISTS `hkman_hkman`;
-CREATE TABLE `hkman_hkman`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `city` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `hourlySalary` double NOT NULL,
-  `description` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `avatar` varchar(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `create_at` datetime(6) NULL,
-  `modified_at` datetime(6) NULL,
-  `account_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `hkman_hkman_account_id_2e7eb0ac_fk_user_user_id`(`account_id`) USING BTREE,
-  CONSTRAINT `hkman_hkman_account_id_2e7eb0ac_fk_user_user_id` FOREIGN KEY (`account_id`) REFERENCES `user_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
 -- Table structure for order_order
 -- ----------------------------
 DROP TABLE IF EXISTS `order_order`;
 CREATE TABLE `order_order`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `startTime` datetime(6) NULL,
-  `hours` double NOT NULL,
-  `pay_status` tinyint(1) NOT NULL,
-  `score` double NOT NULL,
-  `create_at` datetime(6) NULL,
-  `modified_at` datetime(6) NULL,
+  `endTime` datetime(6) NULL,
+  `orderStatus` int(11) NOT NULL,
+  `userDelete` tinyint(1) NOT NULL,
+  `createAt` datetime(6) NULL,
+  `modifiedAt` datetime(6) NULL,
   `customer_id` int(11) NOT NULL,
-  `serviceman_id` int(11) NOT NULL,
+  `service_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `order_order_customer_id_5bbbd957_fk_user_user_id`(`customer_id`) USING BTREE,
-  INDEX `order_order_serviceman_id_8c0e5a28_fk_hkman_hkman_id`(`serviceman_id`) USING BTREE,
+  INDEX `order_order_service_id_06032452_fk_service_service_id`(`service_id`) USING BTREE,
   CONSTRAINT `order_order_customer_id_5bbbd957_fk_user_user_id` FOREIGN KEY (`customer_id`) REFERENCES `user_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `order_order_serviceman_id_8c0e5a28_fk_hkman_hkman_id` FOREIGN KEY (`serviceman_id`) REFERENCES `hkman_hkman` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `order_order_service_id_06032452_fk_service_service_id` FOREIGN KEY (`service_id`) REFERENCES `service_service` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for score_score
+-- ----------------------------
+DROP TABLE IF EXISTS `score_score`;
+CREATE TABLE `score_score`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `timeScore` int(11) NOT NULL,
+  `serviceScore` int(11) NOT NULL,
+  `description` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `images` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `createAt` datetime(6) NULL,
+  `modifiedAt` datetime(6) NULL,
+  `customer_id` int(11) NOT NULL,
+  `service_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `score_score_customer_id_168c3c92_fk_user_user_id`(`customer_id`) USING BTREE,
+  INDEX `score_score_service_id_62560868_fk_service_service_id`(`service_id`) USING BTREE,
+  CONSTRAINT `score_score_customer_id_168c3c92_fk_user_user_id` FOREIGN KEY (`customer_id`) REFERENCES `user_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `score_score_service_id_62560868_fk_service_service_id` FOREIGN KEY (`service_id`) REFERENCES `service_service` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for service_category
+-- ----------------------------
+DROP TABLE IF EXISTS `service_category`;
+CREATE TABLE `service_category`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for service_collections
+-- ----------------------------
+DROP TABLE IF EXISTS `service_collections`;
+CREATE TABLE `service_collections`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `createAt` datetime(6) NULL,
+  `modifiedAt` datetime(6) NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `service_collections_user_id_ff688055_fk_user_user_id`(`user_id`) USING BTREE,
+  CONSTRAINT `service_collections_user_id_ff688055_fk_user_user_id` FOREIGN KEY (`user_id`) REFERENCES `user_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for service_collections_services
+-- ----------------------------
+DROP TABLE IF EXISTS `service_collections_services`;
+CREATE TABLE `service_collections_services`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `collections_id` int(11) NOT NULL,
+  `service_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `service_collections_serv_collections_id_service_i_34f3047b_uniq`(`collections_id`, `service_id`) USING BTREE,
+  INDEX `service_collections__service_id_f74e2bb8_fk_service_s`(`service_id`) USING BTREE,
+  CONSTRAINT `service_collections__collections_id_0b8ee91b_fk_service_c` FOREIGN KEY (`collections_id`) REFERENCES `service_collections` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `service_collections__service_id_f74e2bb8_fk_service_s` FOREIGN KEY (`service_id`) REFERENCES `service_service` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for service_service
+-- ----------------------------
+DROP TABLE IF EXISTS `service_service`;
+CREATE TABLE `service_service`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `title` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `sex` int(11) NOT NULL,
+  `unService` tinyint(1) NOT NULL,
+  `city` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `hourlyWage` int(11) NOT NULL,
+  `description` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `workTimeStart` datetime(6) NULL,
+  `workTimeEnd` datetime(6) NULL,
+  `createAt` datetime(6) NULL,
+  `modifiedAt` datetime(6) NULL,
+  `company_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `service_service_company_id_ede54f09_fk_company_company_id`(`company_id`) USING BTREE,
+  CONSTRAINT `service_service_company_id_ede54f09_fk_company_company_id` FOREIGN KEY (`company_id`) REFERENCES `company_company` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for service_service_subcategory
+-- ----------------------------
+DROP TABLE IF EXISTS `service_service_subcategory`;
+CREATE TABLE `service_service_subcategory`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `service_id` int(11) NOT NULL,
+  `subcategory_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `service_service_subCateg_service_id_subcategory_i_6b00bdb2_uniq`(`service_id`, `subcategory_id`) USING BTREE,
+  INDEX `service_service_subC_subcategory_id_ee8a917a_fk_service_s`(`subcategory_id`) USING BTREE,
+  CONSTRAINT `service_service_subC_service_id_f0f91011_fk_service_s` FOREIGN KEY (`service_id`) REFERENCES `service_service` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `service_service_subC_subcategory_id_ee8a917a_fk_service_s` FOREIGN KEY (`subcategory_id`) REFERENCES `service_subcategory` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for service_subcategory
+-- ----------------------------
+DROP TABLE IF EXISTS `service_subcategory`;
+CREATE TABLE `service_subcategory`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `category_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `service_subcategory_category_id_933ada07_fk_service_category_id`(`category_id`) USING BTREE,
+  CONSTRAINT `service_subcategory_category_id_933ada07_fk_service_category_id` FOREIGN KEY (`category_id`) REFERENCES `service_category` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -301,48 +425,36 @@ CREATE TABLE `order_order`  (
 DROP TABLE IF EXISTS `user_user`;
 CREATE TABLE `user_user`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `username` varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `password` varchar(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `salt` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `real_name` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `salt` varchar(6) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `real_name` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `sex` tinyint(1) NOT NULL,
   `phone` int(11) NOT NULL,
-  `create_at` datetime(6) NULL,
-  `modified_at` datetime(6) NULL,
+  `createAt` datetime(6) NULL,
+  `modifiedAt` datetime(6) NULL,
+  `company_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `username`(`username`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Table structure for wage_wage
--- ----------------------------
-DROP TABLE IF EXISTS `wage_wage`;
-CREATE TABLE `wage_wage`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `money` double NOT NULL,
-  `create_at` datetime(6) NULL,
-  `modified_at` datetime(6) NULL,
-  `hkman_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `wage_wage_hkman_id_c2dfc879_fk_hkman_hkman_id`(`hkman_id`) USING BTREE,
-  CONSTRAINT `wage_wage_hkman_id_c2dfc879_fk_hkman_hkman_id` FOREIGN KEY (`hkman_id`) REFERENCES `hkman_hkman` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  UNIQUE INDEX `username`(`username`) USING BTREE,
+  INDEX `user_user_company_id_dcac3c3f_fk_company_company_id`(`company_id`) USING BTREE,
+  CONSTRAINT `user_user_company_id_dcac3c3f_fk_company_company_id` FOREIGN KEY (`company_id`) REFERENCES `company_company` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for wage_withdraw
+-- Table structure for withdraw_withdraw
 -- ----------------------------
-DROP TABLE IF EXISTS `wage_withdraw`;
-CREATE TABLE `wage_withdraw`  (
+DROP TABLE IF EXISTS `withdraw_withdraw`;
+CREATE TABLE `withdraw_withdraw`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `money` double NOT NULL,
   `method` varchar(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `create_at` datetime(6) NULL,
-  `modified_at` datetime(6) NULL,
-  `hkman_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `createAt` datetime(6) NULL,
+  `modifiedAt` datetime(6) NULL,
+  `company_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `wage_withdraw_hkman_id_85cc6e31_fk_hkman_hkman_id`(`hkman_id`) USING BTREE,
-  CONSTRAINT `wage_withdraw_hkman_id_85cc6e31_fk_hkman_hkman_id` FOREIGN KEY (`hkman_id`) REFERENCES `hkman_hkman` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  INDEX `withdraw_withdraw_company_id_e5126e31_fk_company_company_id`(`company_id`) USING BTREE,
+  CONSTRAINT `withdraw_withdraw_company_id_e5126e31_fk_company_company_id` FOREIGN KEY (`company_id`) REFERENCES `company_company` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;

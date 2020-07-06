@@ -23,6 +23,8 @@ urlpatterns = [
     path('', index),
     path('user/', include('user.urls', namespace='User')),
     path('order/', include('order.urls', namespace='Order')),
-    path('hkman/', include('hkman.urls', namespace='HKMan')),
-    path('wage/', include('wage.urls', namespace='Wage'))
+    path('service/', include('service.urls', namespace='Service')),
+    path('score/', include('score.urls', namespace='Score')),
+    path('withdraw/', include('withdraw.urls', namespace='WithDraw')),
+    path('company/', include('company.urls', namespace='Company'))
 ]

@@ -9,7 +9,7 @@
 
 # 项目简介
 本项目采用前后端完全分离的形式，后端均返回json数据
-前端采用vuejs2+mint-ui，后端为django+mysql的设计
+前端采用Nuxtjs+mint-ui+element，后端为django+mysql+redis的设计
 
 # 项目备注
 默认超级用户账号/密码：admin/admin
