@@ -21,35 +21,21 @@ def login(request):
         # 判断密码正确性
         if password == user.password:
             # 登录成功
-
-            # 把内容存到cookie中
-            resp = redirect('/showusi/<int:userId>/')
-            # 设置cookie
-            resp.set_signed_cookie('username', username, salt='xyz')
-
-            # 把数据存入到session中
+            # 存入session
             request.session['username'] = username
-
             # 响应到客户端
-            return resp
+            return js_ok('ok')
 
         else:
             # 这是账号密码不对的时候
-            return render(request, 'login.html', {'msg':'账号或密码有误,请检查后登录'})
+            return js_error('100', 'error')
 
-    else:
-        # 这是GET请求, 则响应到客户端
 
-        # 获取到cookie的值
-        username = request.get_signed_cookie('username', None, salt='xyz')
+def logout(request):
+    request.session.flush()
 
-        # 判断username是否存在
-        if username:
-            # 如果username存在, 则可以自动填写到输入框
-            return render(request, 'login.html', {'username':username})
-        else:
-            # username不存在
-            return render(request, 'login.html')
+    return js_ok('ok')
+
 
 def register(request):
     """
@@ -69,7 +55,7 @@ def register(request):
         user = User.objects.filter(username=username)
 
         if len(user) > 0:
-            return render(request, 'register.html', {'error_msg':'用户名已经被使用'})
+            return js_error('100', 'error')
 
         # 这是用户名可以使用的时候
         # 添加数据
@@ -85,10 +71,7 @@ def register(request):
 
         user.save()
 
-        return render(request, 'register.html', {'success_msg':'创建用户成功'})
-
-    else:
-        return render(request, 'register.html')
+        return js_ok('ok')
 
 
 def completeUserInfo(request):
@@ -112,8 +95,7 @@ def completeUserInfo(request):
         account = request.session['username']
 
         if sex == "" and real_name == "" and phone == "":  # 如果三项都没有进行修改
-            context['error_msg'] = '请至少修改一项'
-            return render(request, 'account_change.html', context)
+            return js_error(502, '请至少修改一项')
         else:  # 如果进行操作，一次判断哪一个发生了改变，再依次update
             if (real_name != ""):  # 昵称如果不为空，更新昵称
                 User.objects.filter(username=account).update(real_name=real_name)
@@ -122,16 +104,14 @@ def completeUserInfo(request):
             if (phone != "" and len(phone) == 11):  # 电话不为空，更新电话
                 User.objects.filter(username=account).update(phone=phone)
             if (phone != "" and len(phone) != 11):
-                context['error_msg'] = '电话号码必须为11位'
-                return render(request, 'account_change.html', context)
+                return js_error(502, '电话号码位数不对')
             this_accounts = User.objects.get(username=account)
-            context['success_msg'] = '修改成功'
             context['account'] = this_accounts.username
             context['name'] = this_accounts.real_name
             context['phone'] = this_accounts.phone
-            return render(request, 'account_change.html', context)
+            return js_ok('修改成功')
     else:
-        return render(request, 'account_change.html', context)
+        return js_error(401, '修改失败')
 
 
 def changePassword(request):
@@ -156,27 +136,20 @@ def changePassword(request):
         # 遍历找到账号
         for i in range(1, User.objects.count() + 1):
             this_accounts = User.objects.get(username=account)
-            if (account == this_accounts.username):
+            if account == this_accounts.username:
                 break
-        if (this_accounts.a_pwd == oldPwd):
-            if (newPwd == newPwd1):
-                if (newPwd != this_accounts.password):
+        if this_accounts.a_pwd == oldPwd:
+            if newPwd == newPwd1:
+                if newPwd != this_accounts.password:
                     User.objects.filter(username=account).update(password=str(newPwd))
-                    context['success_msg'] = '修改成功'
-                    return render(request, 'account_changeP.html', context)
+                    return js_ok('修改成功')
                 else:
-                    context['error_msg'] = '不能与原密码相同'
-                    return render(request, 'account_changeP.html', context)
+                    js_error(502, '不能与原密码一致')
             else:
-                context['error_msg'] = '两次密码不一致，请重新输入'
-                return render(request, 'account_changeP.html', context)
+                js_error(502, '两次密码不一致')
         else:
-            context['error_msg'] = '原密码错误，请重新再试'
-            return render(request, 'account_changeP.html', context)
-    else:
-        context['success_msg'] = ""
-        context['error_msg'] = ""
-        return render(request, 'account_changeP.html', context)
+            js_error(401, '原密码不对')
+
 
 
 def forgetPassword(request):
@@ -195,7 +168,7 @@ def showUserInfo(request, userId):
     请求方式：GET
     返回手机、性别、姓氏等信息
     """
-    result = User.objects.filter(userId=userId)
+    result = User.objects.get(userId=userId)
 
     context = dict()
     context['data'] = result
